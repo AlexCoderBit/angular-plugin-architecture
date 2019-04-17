@@ -5,6 +5,12 @@ import * as router from '@angular/router';
 import * as rxjs from 'rxjs';
 import * as tslib from 'tslib';
 
+// redux
+import * as store from '@angular-redux/store';
+import * as redux from 'redux';
+import * as devtools from 'redux-devtools-extension';
+import * as logger from 'redux-logger';
+
 export const PLUGIN_EXTERNALS_MAP = {
   'ng.core': core,
   'ng.common': common,
@@ -12,6 +18,9 @@ export const PLUGIN_EXTERNALS_MAP = {
   'ng.router': router,
   rxjs,
   tslib,
+  'ng.store': store,
+  redux,
+  'redux-devtools-extension': devtools,
+  'redux-logger': logger,
   shared: '/assets/plugins/shared.js'
 };
-

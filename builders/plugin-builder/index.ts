@@ -60,11 +60,17 @@ export default class PluginBuilder extends BrowserBuilder {
 
     config.externals = {
       rxjs: 'rxjs',
+      tslib: 'tslib',
       '@angular/core': 'ng.core',
       '@angular/common': 'ng.common',
       '@angular/forms': 'ng.forms',
       '@angular/router': 'ng.router',
-      tslib: 'tslib'
+
+      // redux
+      '@angular-redux/store': 'ng.store',
+      redux: 'redux',
+      'redux-devtools-extension': 'redux-devtools-extension',
+      'redux-logger': 'redux-logger'
       // put here other common dependencies
     };
 

@@ -10,7 +10,10 @@ import { PluginLoaderService } from './services/plugin-loader/plugin-loader.serv
 import { ClientPluginLoaderService } from './services/plugin-loader/client-plugin-loader.service';
 import { PluginsConfigProvider } from './services/plugins-config.provider';
 import { TransferStateService } from './services/transfer-state.service';
-import { SharedModule } from 'shared';
+import { SharedModule, store } from 'shared';
+// import { NgRedux } from '@angular-redux/store';
+
+interface appState {}
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,5 +40,10 @@ import { SharedModule } from 'shared';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(transferStateService: TransferStateService) {}
+  constructor(transferStateService: TransferStateService) {
+    store.dispatch({
+      type: 'CORE_ACTION_TEST',
+      payload: { message: 'Redux is up and running' }
+    });
+  }
 }
